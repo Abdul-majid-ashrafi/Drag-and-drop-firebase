@@ -6,16 +6,16 @@ angular.module("App")
 
 
     .controller("loginCtrl", function ($scope , $firebaseArray,$firebaseObject,$q) {
-        var ref = new Firebase("https://draganddropsdk.firebaseio.com/female")
+        var refAdd = new Firebase("https://draganddropsdk.firebaseio.com/add")
         
         
                 
          $scope.addFemale = function (user) {
-           ref.push(user)
+           refAdd.push(user)
         }
-            ref.on("value", function (snapshot) {
-             $scope.women = snapshot.val()
-               console.log($scope.women)
+            refAdd.on("value", function (snapshot) {
+             $scope.add = snapshot.val()
+            //    console.log($scope.add)  
                setTimeout(function(){
                     $scope.$apply()
                },100)
@@ -23,41 +23,63 @@ angular.module("App")
  
  
  
-        var maleRef = new Firebase("https://draganddropsdk.firebaseio.com/male")
-        $scope.addMale = function (user) {
-            maleRef.push(user)
-        }
-            maleRef.on("value", function (snapshot) {
-              $scope.men = snapshot.val()
-               console.log($scope.men)
+        var refDoing = new Firebase("https://draganddropsdk.firebaseio.com/diong")
+        // $scope.addMale = function (user) {
+        //     refDoing.push(user)
+        // }
+            refDoing.on("value", function (snapshot) {
+              $scope.diong = snapshot.val()
+            //    console.log($scope.diong)
                setTimeout(function(){
                     $scope.$apply()
                },1000)  
             })
+            
+            
+        var refReview = new Firebase("https://draganddropsdk.firebaseio.com/review")
+        
+            refReview.on("value", function (snapshot) {
+              $scope.review = snapshot.val()
+               setTimeout(function(){
+                    $scope.$apply()
+               },100)  
+            })
+            
+             var refDone = new Firebase("https://draganddropsdk.firebaseio.com/done")
+        
+            refDone.on("value", function (snapshot) {
+              $scope.done = snapshot.val()
+               setTimeout(function(){
+                    $scope.$apply()
+               },100)  
+            })
+            
         
 
       $scope.dropSuccessHandler = function($event,index,array){
         var k = Object.keys(array).splice(index,1)
         console.log(k)
           k = k[0];
-             maleRef.child(k).remove();
-              ref.child(k).remove();
+          refDone.child(k).remove();
+          refReview.child(k).remove();
+             refDoing.child(k).remove();
+              refAdd.child(k).remove();
             
    
       };
       
             
-      $scope.onDrop = function($event,$data,array){
-          maleRef.push($data);
-          
+      $scope.onDrop = function ($event, $data, array) {
+          refDoing.push($data);
       };
-       $scope.onDrops = function($event,$data,array){
-        //   var key = femaleKey [index]
-        //   ref.child(key).set(null);
-        //   ref.push($data);
-          ref.push($data);
-          
+      $scope.onDrop1 = function ($event, $data, array) {
+          refAdd.push($data);
       };
-    // })
+      $scope.onDrop2 = function ($event, $data, array) {
+          refReview.push($data);
+      };
+      $scope.onDrop3 = function ($event, $data, array) {
+          refDone.push($data);
+      };
     });
 

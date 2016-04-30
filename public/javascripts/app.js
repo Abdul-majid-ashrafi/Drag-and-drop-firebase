@@ -1,4 +1,4 @@
-angular.module("App", ["ui.router","firebase","ang-drag-drop"])
+angular.module("App", ["ngMaterial","ui.router","firebase","ang-drag-drop"])
 
 
     .config(function ($urlRouterProvider,$stateProvider) {

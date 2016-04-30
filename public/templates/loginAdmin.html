@@ -1,67 +1,80 @@
    <br/>  <br/>
-<form class="form-inline">
-  <div class="form-group">
-    <label for="exampleInputName2">Name</label>
-    <input type="text" class="form-control" id="exampleInputName2" placeholder="Write something" ng-model="user.name">
-  </div>
-<button type="submit" class="btn btn-success" ng-click="addFemale(user)">Add Female</button>
-  <button type="submit" class="btn btn-danger" ng-click="addMale(user)">Add Male</button>
-</form>
-   <br/>  <br/>
 
+  <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+       <md-input-container>
+        <label>Name</label>
+        <input ng-model="user.name">
+              <md-button class="md-raised md-primary" ng-click="addFemale(user)">add</md-button>
+<md-button class="md-raised md-primary" ng-click="addMale(user)">doing</md-button>
+<md-button class="md-raised md-primary">review</md-button>
+<md-button class="md-raised md-primary">done</md-button>
+      </md-input-container>
+  </md-content>
+ 
+<div layout="row">
+    
+    <md-content class="md-padding"  ui-on-Drop="onDrop1($event,$data,add)">
+              <md-card>
+         <md-toolbar class="md-primary"  style="width:300px">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Add</h2>
+    </div>
+  </md-toolbar>
+  <md-card>
+  <md-list-item  class="secondary-button-padding" ng-click="doPrimaryAction()" ui-draggable="true" drag="ad" on-drop-success="dropSuccessHandler($event,$index,add)" ng-repeat="ad in add track by $index">
+    {{ad.name}}
+  </md-list-item> </md-card>
+      </md-card>
+  </md-content>
+  <!--=======================================================================================================-->
+  
+   <md-content class="md-padding"  ui-on-Drop="onDrop($event,$data,diong)">
+              <md-card>
+         <md-toolbar class="md-primary"  style="width:300px">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Doing</h2>
+    </div>
+  </md-toolbar>
+  <md-card>
+  <md-list-item  class="secondary-button-padding" ng-click="doPrimaryAction()" ui-draggable="true" drag="do" on-drop-success="dropSuccessHandler($event,$index,diong)" ng-repeat="do in diong track by $index">
+    {{do.name}}
+  </md-list-item> </md-card>
+      </md-card>
+  </md-content>
+  
+   <!--=======================================================================================================-->
+  
+   <md-content class="md-padding"  ui-on-Drop="onDrop2($event,$data,review)">
+              <md-card>
+         <md-toolbar class="md-primary"  style="width:300px">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Review</h2>
+    </div>
+  </md-toolbar>
+  <md-card>
+  <md-list-item  class="secondary-button-padding" ng-click="doPrimaryAction()" ui-draggable="true" drag="rev" on-drop-success="dropSuccessHandler($event,$index,review)" ng-repeat="rev in review track by $index">
+    {{rev.name}}
+  </md-list-item> </md-card>
+      </md-card>
+  </md-content>
+  
+    <!--=======================================================================================================-->
+  
+    <md-content class="md-padding"  ui-on-Drop="onDrop3($event,$data,done)">
+              <md-card>
+         <md-toolbar class="md-primary"  style="width:300px">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Done</h2>
+    </div>
+  </md-toolbar>
+  <md-card>
+  <md-list-item  class="secondary-button-padding" ng-click="doPrimaryAction()" ui-draggable="true" drag="do" on-drop-success="dropSuccessHandler($event,$index,done)" ng-repeat="do in done track by $index">
+    {{do.name}}
+  </md-list-item> </md-card>
+      </md-card>
+  </md-content>
 
-<form class="form-inline">
-<table class="table table-hover" ui-on-Drop="onDrop($event,$data,men)" border="1" style="width:20% ">
-   <th class="danger">Name List: Men</th>
-    <tr ui-draggable="true" drag="man" on-drop-success="dropSuccessHandler($event,$index,men)" ng-repeat="man in men track by $index">
-        <td>{{man.name}}</td>
-    </tr>
-    </table>
-</form>
+  
+</div>
+ 
 
-
-
-
-
-<form class="form-inline">
-<table class="table table-hover" ui-on-Drop="onDrops($event,$data,women)" border="1" style="width:20%">
-    <th class="success">Name List: women</th>
-    <tr ui-draggable="true" drag="woman" on-drop-success="dropSuccessHandler($event,$index,women)" ng-repeat="woman in women track by $index">
-        <td>{{woman.name}}</td>
-    </tr>
-</table>
-</form>
-
-
-<style>
-    form{
-        margin: 10px;
-                display:  inline;
-              
-
-    }
-    table{
-        display:  inline-table;
-      
-    }
-</style>
-
-
-
-
-<!--<ul ui-on-Drop="onDrop($event,$data,men)" style="padding:20px;border: solid red 2px">
-                    MAN:
-                    <li ui-draggable="true" drag="man" on-drop-success="dropSuccessHandler($event,$index,men)"ng-repeat="man in men track by $index">
-                        {{man.name}}
-                    </li>
-                </ul>-->
-
-
-
-<!--         
-                <ul ui-on-Drop="onDrop($event,$data,women)" style="padding:20px;border: solid red 2px">
-                   WOMAN: <li ui-draggable="true" drag="woman"on-drop-success="dropSuccessHandler($event,$index,women)"ng-repeat="woman in women track by $index">
-                        {{woman.name}}
-                    </li>
-                </ul>
-        -->
