@@ -6,7 +6,7 @@ angular.module("App")
 
 
     .controller("loginCtrl", function ($scope , $firebaseArray,$firebaseObject,$q) {
-        var ref = new Firebase("https://qurbaniapps.firebaseio.com/female")
+        var ref = new Firebase("https://draganddropsdk.firebaseio.com/female")
         
         
                 
@@ -23,7 +23,7 @@ angular.module("App")
  
  
  
-        var maleRef = new Firebase("https://qurbaniapps.firebaseio.com/male")
+        var maleRef = new Firebase("https://draganddropsdk.firebaseio.com/male")
         $scope.addMale = function (user) {
             maleRef.push(user)
         }
