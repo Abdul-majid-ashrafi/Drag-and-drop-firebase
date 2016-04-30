@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      "angular-native-dragdrop",
+      "c:\\Users\\Mani\\Desktop\\blood\\Simple MongoDB Example"
+    ]
+  ],
+  "_from": "angular-native-dragdrop@latest",
+  "_id": "angular-native-dragdrop@1.1.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular-native-dragdrop",
+  "_npmUser": {
+    "email": "toilal.dev@gmail.com",
+    "name": "toilal"
+  },
+  "_npmVersion": "1.4.28",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angular-native-dragdrop",
+    "raw": "angular-native-dragdrop",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-native-dragdrop/-/angular-native-dragdrop-1.1.2.tgz",
+  "_shasum": "212bbde936f8080d4a34bbede6345d2765594399",
+  "_shrinkwrap": null,
+  "_spec": "angular-native-dragdrop",
+  "_where": "c:\\Users\\Mani\\Desktop\\blood\\Simple MongoDB Example",
+  "author": {
+    "name": "ganarajpr"
+  },
+  "bugs": {
+    "url": "https://github.com/angular-dragdrop/angular-dragdrop/issues"
+  },
+  "dependencies": {},
+  "description": "Angular HTML5 Drag and Drop directive written in pure with no dependency on JQuery.",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.9.2",
+    "jshint-stylish": "^1.0.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "212bbde936f8080d4a34bbede6345d2765594399",
+    "tarball": "https://registry.npmjs.org/angular-native-dragdrop/-/angular-native-dragdrop-1.1.2.tgz"
+  },
+  "gitHead": "0992bf337b5748f2f37cfb91c6352db9f179b643",
+  "homepage": "http://angular-dragdrop.github.io/angular-dragdrop",
+  "license": "MIT",
+  "main": "draganddrop.js",
+  "maintainers": [
+    {
+      "email": "toilal.dev@gmail.com",
+      "name": "toilal"
+    },
+    {
+      "email": "nebithi@gmail.com",
+      "name": "ganarajpr"
+    }
+  ],
+  "name": "angular-native-dragdrop",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular-dragdrop/angular-dragdrop.git"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "version": "1.1.2"
+}

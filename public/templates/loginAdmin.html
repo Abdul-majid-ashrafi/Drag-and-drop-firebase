@@ -1,0 +1,67 @@
+   <br/>  <br/>
+<form class="form-inline">
+  <div class="form-group">
+    <label for="exampleInputName2">Name</label>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="Write something" ng-model="user.name">
+  </div>
+<button type="submit" class="btn btn-success" ng-click="addFemale(user)">Add Female</button>
+  <button type="submit" class="btn btn-danger" ng-click="addMale(user)">Add Male</button>
+</form>
+   <br/>  <br/>
+
+
+<form class="form-inline">
+<table class="table table-hover" ui-on-Drop="onDrop($event,$data,men)" border="1" style="width:20% ">
+   <th class="danger">Name List: Men</th>
+    <tr ui-draggable="true" drag="man" on-drop-success="dropSuccessHandler($event,$index,men)" ng-repeat="man in men track by $index">
+        <td>{{man.name}}</td>
+    </tr>
+    </table>
+</form>
+
+
+
+
+
+<form class="form-inline">
+<table class="table table-hover" ui-on-Drop="onDrops($event,$data,women)" border="1" style="width:20%">
+    <th class="success">Name List: women</th>
+    <tr ui-draggable="true" drag="woman" on-drop-success="dropSuccessHandler($event,$index,women)" ng-repeat="woman in women track by $index">
+        <td>{{woman.name}}</td>
+    </tr>
+</table>
+</form>
+
+
+<style>
+    form{
+        margin: 10px;
+                display:  inline;
+              
+
+    }
+    table{
+        display:  inline-table;
+      
+    }
+</style>
+
+
+
+
+<!--<ul ui-on-Drop="onDrop($event,$data,men)" style="padding:20px;border: solid red 2px">
+                    MAN:
+                    <li ui-draggable="true" drag="man" on-drop-success="dropSuccessHandler($event,$index,men)"ng-repeat="man in men track by $index">
+                        {{man.name}}
+                    </li>
+                </ul>-->
+
+
+
+<!--         
+                <ul ui-on-Drop="onDrop($event,$data,women)" style="padding:20px;border: solid red 2px">
+                   WOMAN: <li ui-draggable="true" drag="woman"on-drop-success="dropSuccessHandler($event,$index,women)"ng-repeat="woman in women track by $index">
+                        {{woman.name}}
+                    </li>
+                </ul>
+        -->
